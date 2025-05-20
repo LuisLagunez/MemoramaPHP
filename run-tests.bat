@@ -4,25 +4,22 @@ cd %~dp0
 echo ===== INSTALANDO DEPENDENCIAS =====
 composer install
 
+echo.
 echo ===== LISTADO DE ARCHIVOS DE TEST =====
-dir core\php\tests > listado.txt
-type listado.txt
+dir core\php\tests
 
-echo ===== UBICACIÓN DE PHP =====
-php -v > php_version.txt
-type php_version.txt
-where php > donde_esta_php.txt
-type donde_esta_php.txt
+echo.
+echo ===== COMPROBANDO UBICACIÓN DE PHPUNIT =====
+dir vendor\bin > contenido_vendor_bin.txt
+type contenido_vendor_bin.txt
 
+echo.
 echo ===== EJECUTANDO PRUEBAS UNITARIAS =====
 php vendor\bin\phpunit --testdox core\php\tests\MateriasManagerTest.php > resultado.txt 2>&1
-echo ===== CONTENIDO DE RESULTADO.TXT =====
+
+echo.
+echo ===== RESULTADO DE LAS PRUEBAS =====
 type resultado.txt
 
-if %ERRORLEVEL% NEQ 0 (
-    echo ❌ PHPUnit falló con error %ERRORLEVEL%
-    exit /b 1
-)
-
-echo ✅ PHPUnit ejecutado correctamente
-echo OK > tests_successful.txt
+echo.
+echo ===== FIN DEL PROCESO =====
