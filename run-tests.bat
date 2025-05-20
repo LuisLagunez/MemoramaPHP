@@ -1,3 +1,3 @@
 echo ===== EJECUTANDO PRUEBAS UNITARIAS ===== >> resultados.txt
-C:\xampp\php\php.exe vendor\bin\phpunit.bat --testdox core\php\tests >> resultados.txt 2>&1
+php vendor\bin\phpunit --testdox core\php\tests > resultado.txt
 echo ===== PRUEBAS EJECUTADAS ===== >> resultados.txt
