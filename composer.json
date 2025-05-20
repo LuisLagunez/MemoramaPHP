@@ -1,0 +1,17 @@
+{
+    "name": "luisl/memoramaphp",
+    "autoload": {
+        "psr-4": {
+            "Luisl\\Memoramaphp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luis Lagunez",
+            "email": "A20216349@alumnos.uady.mx"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "10"
+    }
+}
