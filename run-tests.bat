@@ -10,12 +10,19 @@ dir core\php\tests
 
 echo.
 echo ===== EJECUTANDO PRUEBAS UNITARIAS =====
-
-REM Ejecutar PHPUnit y redirigir salida a un archivo
 php vendor\bin\phpunit --testdox core\php\tests > resultado.txt
 
-REM Mostrar contenido del resultado en consola
+REM Mostrar resultados en consola
 type resultado.txt
+
+REM Si PHPUnit falla, salimos con código 1
+IF %ERRORLEVEL% NEQ 0 (
+    echo Tests failed
+    exit /b 1
+)
+
+REM Si PHPUnit pasa, creamos un archivo indicador
+echo Tests ran successfully > tests_successful.txt
 
 echo.
 echo ===== FIN DEL PROCESO =====
