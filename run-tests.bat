@@ -10,11 +10,7 @@ dir core\php\tests
 
 echo.
 echo ===== EJECUTANDO PRUEBAS UNITARIAS =====
-C:\xampp\php\php.exe vendor\bin\phpunit --testdox core\php\tests\MateriasManagerTest.php > resultado.txt 2>&1
-
-echo.
-echo ===== RESULTADO DE LAS PRUEBAS =====
-type resultado.txt
+C:\xampp\php\php.exe vendor\bin\phpunit --testdox core\php\tests\MateriasManagerTest.php
 
 echo.
 echo ===== FIN DEL PROCESO =====
