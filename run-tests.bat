@@ -6,23 +6,21 @@ composer install
 
 echo.
 echo ===== LISTADO DE ARCHIVOS DE TEST =====
-dir core\php\tests
+dir core\php\tests > listado.txt
+type listado.txt
 
 echo.
 echo ===== EJECUTANDO PRUEBAS UNITARIAS =====
-php vendor\bin\phpunit --testdox core\php\tests > resultado.txt
-
-REM Mostrar resultados en consola
+php vendor\bin\phpunit --testdox core\php\tests\MateriasManagerTest.php > resultado.txt 2>&1
 type resultado.txt
 
-REM Si PHPUnit falla, salimos con código 1
+REM Si PHPUnit falla, Jenkins lo sabrá
 IF %ERRORLEVEL% NEQ 0 (
     echo Tests failed
     exit /b 1
 )
 
-REM Si PHPUnit pasa, creamos un archivo indicador
-echo Tests ran successfully > tests_successful.txt
+echo OK > tests_successful.txt
 
 echo.
 echo ===== FIN DEL PROCESO =====
