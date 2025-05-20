@@ -10,7 +10,9 @@ dir core\php\tests
 
 echo.
 echo ===== EJECUTANDO PRUEBAS UNITARIAS =====
-php vendor\bin\phpunit --testdox core\php\tests\MateriasManagerTest.php
+cmd /c php vendor\bin\phpunit --testdox core\php\tests\MateriasManagerTest.php
 
 echo.
 echo ===== FIN DEL PROCESO =====
+
+pause
