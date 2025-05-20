@@ -1,19 +1,16 @@
 @echo off
 cd %~dp0
 
-echo ===== INSTALANDO DEPENDENCIAS =====
-composer install > composer_log.txt
-type composer_log.txt
+echo ===== INSTALANDO DEPENDENCIAS ===== > resultados.txt
+composer install >> resultados.txt 2>&1
 
-echo.
-echo ===== LISTADO DE ARCHIVOS DE TEST =====
-dir core\php\tests > listado_archivos.txt
-type listado_archivos.txt
+echo. >> resultados.txt
+echo ===== LISTADO DE ARCHIVOS DE TEST ===== >> resultados.txt
+dir core\php\tests >> resultados.txt 2>&1
 
-echo.
-echo ===== EJECUTANDO PRUEBAS UNITARIAS =====
-C:\xampp\php\php.exe vendor\bin\phpunit --testdox core\php\tests\MateriasManagerTest.php > resultados.txt
-type resultados.txt
+echo. >> resultados.txt
+echo ===== EJECUTANDO PRUEBAS UNITARIAS ===== >> resultados.txt
+C:\xampp\php\php.exe vendor\bin\phpunit --testdox core\php\tests >> resultados.txt 2>&1
 
-echo.
-echo ===== FIN DEL PROCESO =====
+echo. >> resultados.txt
+echo ===== FIN DEL PROCESO ===== >> resultados.txt
