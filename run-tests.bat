@@ -10,7 +10,12 @@ dir core\php\tests
 
 echo.
 echo ===== EJECUTANDO PRUEBAS UNITARIAS =====
-php vendor\bin\phpunit --testdox core\php\tests
+
+REM Ejecutar PHPUnit y redirigir salida a un archivo
+php vendor\bin\phpunit --testdox core\php\tests > resultado.txt
+
+REM Mostrar contenido del resultado en consola
+type resultado.txt
 
 echo.
 echo ===== FIN DEL PROCESO =====
